@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.bg-theme{
+    background: #eb384f !important; 
+}
+.font-32{
+    font-size: 2rem !important;
+}
