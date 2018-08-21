@@ -11,6 +11,8 @@ import { LoginService } from './login/service/login.service';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardCardComponent } from './dashboard/dashboard-card/dashboard-card.component';
+import { ComplexService } from './complex/complex.service';
+import { DashboardCardContentComponent } from './dashboard/dashboard-card-content/dashboard-card-content.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { DashboardCardComponent } from './dashboard/dashboard-card/dashboard-car
     DashboardComponent,
     NavbarComponent,
     DashboardCardComponent,
+    DashboardCardContentComponent,
 
   ],
   imports: [
@@ -29,7 +32,7 @@ import { DashboardCardComponent } from './dashboard/dashboard-card/dashboard-car
     HttpClientModule,
     SlickModule.forRoot()
   ],
-  providers: [LoginService],
+  providers: [LoginService, ComplexService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

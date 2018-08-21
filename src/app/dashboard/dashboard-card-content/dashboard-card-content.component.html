@@ -1,0 +1,30 @@
+<div class="card p-4 m-4">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-2 p-0 m-0"> <img src="{{task.imageURL}}" class="img-fluid task_image" alt="image" width=100%> </div>
+      <div class="col-md-6">
+        <div class="d-flex flex-column bd-highlight mb-3">
+          <div class=" bd-highlight">{{task.header}}</div>
+          <div class=" bd-highlight">{{task.title}}</div>
+          <div class=" bd-highlight">{{task.description}}</div>
+        </div>
+      </div>
+      <div class="col-md-4 p-0 m-0">
+        <div class="d-flex flex-column bd-highlight mb-3">
+          <div class="mb-2">{{task.status}}</div>
+          <div class="align-self-center"><i class="material-icons">
+              call
+            </i></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4"> Start Time </div>
+      <div class="col-md-4"> Duration </div>
+      <div class="col-md-4"> Score </div>
+    </div>
+
+  </div>
+</div>
