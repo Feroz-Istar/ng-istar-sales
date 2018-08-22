@@ -79,7 +79,8 @@
 
 .slick-prev
 {
-    left: -25px;
+    z-index: 1;
+    left: -11px;
 }
 [dir='rtl'] .slick-prev
 {
@@ -97,7 +98,7 @@
 
 .slick-next
 {
-    right: -25px;
+    right: 9px;
 }
 [dir='rtl'] .slick-next
 {
@@ -201,4 +202,8 @@
 {
     opacity: .75;
     color: black;
+}
+.slick-prev:before, .slick-next:before {
+    color: #eb384f !important;
+    font-size: 40px !important;
 }

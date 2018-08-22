@@ -30,9 +30,6 @@ export class LoginComponent implements OnInit {
 
     });
 
-
-
-
     if (localStorage.getItem('complexobject')) {
       console.log("user already exist")
       this.router.navigate(['../dashboard'], { relativeTo: this.route });

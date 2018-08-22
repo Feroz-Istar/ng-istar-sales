@@ -1,30 +1,39 @@
-<div class="card p-4 m-4">
-  <div class="card-body">
+<div class="card m-3">
+  <div class="card-body p-2" [ngClass]="{'task-complete':task.status === 'COMPLETE', 'task-incomplete':task.status === 'INCOMPLETE'}">
     <div class="row">
-      <div class="col-md-2 p-0 m-0"> <img src="{{task.imageURL}}" class="img-fluid task_image" alt="image" width=100%> </div>
+      <div class="col-md-2 m-0"> <img src="{{task.imageURL}}" class="img-fluid task_image" alt="image" width=100%> </div>
       <div class="col-md-6">
         <div class="d-flex flex-column bd-highlight mb-3">
-          <div class=" bd-highlight">{{task.header}}</div>
-          <div class=" bd-highlight">{{task.title}}</div>
-          <div class=" bd-highlight">{{task.description}}</div>
+          <div class=" bd-highlight font-12 color-55">{{task?.header}}</div>
+          <div class=" bd-highlight font-16 font-weight-bold color-33">{{task?.title.slice(0,10)}}</div>
+          <div class=" bd-highlight font-12 color-55">{{task?.description.slice(0,10)}}</div>
         </div>
       </div>
       <div class="col-md-4 p-0 m-0">
-        <div class="d-flex flex-column bd-highlight mb-3">
-          <div class="mb-2">{{task.status}}</div>
-          <div class="align-self-center"><i class="material-icons">
+        <div class="d-flex flex-column bd-highlight ml-3 mr-0 mb-3">
+          <div class="mb-2 font-13">{{task.status}}</div>
+          <div class="align-self-start pl-4 " [ngClass]="{'color-complete':task.status === 'COMPLETE', 'color-incomplete':task.status === 'INCOMPLETE' }"><i
+              class="material-icons font-36 ">
               call
             </i></div>
         </div>
-
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-4"> Start Time </div>
-      <div class="col-md-4"> Duration </div>
-      <div class="col-md-4"> Score </div>
+      <div class="col-md-4">
+        <div class="d-flex flex-column">
+          <div class="font-grey"> Start Time </div>
+          <div class="font-14 color-55"> {{task?.date.slice(11,16)}} </div>
+        </div>
+      </div>
+      <div class="col-md-4 font-grey"> Duration </div>
+      <div class="col-md-4 mb-3">
+        <div class="d-flex flex-column">
+          <div class="font-grey "> Score </div>
+          <ngb-rating [(rate)]="currentRate" [max]="5" class="color"></ngb-rating>
+        </div>
+      </div>
     </div>
 
   </div>
-</div>

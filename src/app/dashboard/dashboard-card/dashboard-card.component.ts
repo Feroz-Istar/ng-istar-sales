@@ -14,19 +14,6 @@ export class DashboardCardComponent implements OnInit {
 
   slideConfig = { "slidesToShow": 3, "slidesToScroll": 3 };
 
-  addSlide() {
-
-  }
-
-  removeSlide() {
-    this.slides.length = this.slides.length - 1;
-  }
-
-  afterChange(e) {
-    console.log('afterChange');
-  }
-
-
   constructor(private complexobjectservice: ComplexService) { }
 
   ngOnInit() {

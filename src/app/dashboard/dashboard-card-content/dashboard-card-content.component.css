@@ -2,3 +2,40 @@
     min-width: 50px !important;
     min-height: 50px !important;
 }
+
+.font-grey{
+    color: #cfcfcf;
+    font-weight: bold;
+}
+
+.task-incomplete{
+    border-top : 3px solid #2196f2;
+}
+
+.task-complete{
+    border-top: 3px solid #eb384f;
+}
+
+.color-complete{
+    color: #eb384f;
+}
+
+.color-incomplete{
+    color:#2196f2;
+}
+
+.color{
+    color:#f6a623 !important;
+}
+
+.font-36{
+    font-size: 2.25rem !important;
+}
+
+.color-33{
+    color: #333333
+}
+
+.color-55{
+    color: #555555
+}

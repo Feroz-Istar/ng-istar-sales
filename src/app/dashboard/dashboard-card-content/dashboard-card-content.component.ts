@@ -8,9 +8,12 @@ import { Task } from '../dashboard-card/task';
 })
 export class DashboardCardContentComponent implements OnInit {
   @Input() task: Task
+  currentRate = 2;
   constructor() { }
 
   ngOnInit() {
+
+
   }
 
 }
