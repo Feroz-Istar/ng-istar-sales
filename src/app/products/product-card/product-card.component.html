@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex flex-row">
+      <div class="col-md-3 font-16 ">
+        <div class="d-flex flex-row">
+          <i class="material-icons "> border_color </i>
+          <div>{{products.name}}</div>
+        </div>
+      </div>
+      <div class="col-md-6 font-16 ">
+        <div class="d-flex flex-row" *ngFor="let assests of products.assests.slice(0,2)">
+          <img class="image-size" src="../assets/image/docx.png" alt="" />
+          <div> {{assests.assestName}} </div>
+        </div>
+      </div>
+      <div class="col-md-3 font-16 ">
+        <span class="badge m-2" *ngFor="let signal of products.signals.slice(0,4)">
+          <div [ngStyle]="{'background-color':signal.color}">
+            {{signal.signal}}
+          </div>
+        </span>
+        <i class="material-icons">add</i>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,11 @@
 .bg-theme{
     background: #eb384f !important; 
 }
+
+.bg-white{
+    background: white !important;
+}
+
 .font-32{
     font-size: 2rem !important;
 }
@@ -22,8 +27,24 @@
     font-size: 1rem !important;
 }
 
+.font-28{
+    font-size: 1.75rem !important;
+}
+
+.font-weightbold{
+    font-weight: bold
+}
+
 .footer-size{
     
     font-size: small ;
     text-align: center;
+}
+
+.text-muted{
+        color: #6c757d!important;
+}
+
+.mycontainer {
+    padding: 65px 0px 0;
 }

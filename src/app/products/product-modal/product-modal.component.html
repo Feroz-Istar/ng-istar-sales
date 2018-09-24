@@ -1,0 +1,117 @@
+<div class="container p-0">
+  <section class="demo">
+
+    <div class="card border-0">
+
+      <form-wizard class="formwizard productwizard" (onStepChanged)="onStepChanged($event)">
+
+        <wizard-step [title]="'1.Product Detail'" [isValid]="emailForm.form.valid" (onNext)="onStep1Next($event)">
+          <div class="card p-4 m-4 border-0 wizard-size">
+            <div class="row w-100 justify-content-center p-0">
+              <div class="card iconstyle m-4 p-4 h-100 shadow-lg" *ngIf="!image">
+                <i class="material-icons iconstyle" (click)="imagefile.click()" *ngIf="!image"> cloud_upload </i>
+                <input hidden type="file" #imagefile (change)="getfile($event)" accept="image/*" />
+
+              </div>
+              <img [src]="image" class="imagesize" *ngIf="image" />
+            </div>
+            <div class="card border-0 ">
+              <form #emailForm="ngForm">
+                <div class="form-group">
+                  <div class="d-flex justify-content-center mt-4">
+                    <label class="col-md-2 pr-2 pt-1 formfont" for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" aria-describedby="name" placeholder="Enter Name"
+                      [(ngModel)]="product.name" required/>
+                  </div>
+                  <div class="d-flex justify-content-center mt-3">
+                    <label class="col-md-2 pr-2 pt-1 formfont" for="exampleInputEmail2">Description</label>
+                    <textarea type="text" class="form-control" id="exampleInputEmail2" name="exampleInputEmail2" aria-describedby="description"
+                      placeholder="Enter Description" rows="3" [(ngModel)]="product.description" required> </textarea>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          {{product|json}}
+        </wizard-step>
+
+
+        <wizard-step [title]="'2.Documents'" [showNext]="step2.showNext" [showPrev]="step2.showPrev" (onNext)="onStep2Next($event)">
+          <div class="card p-4 m-4 border-0 wizard-size">
+
+            <div class="row w-100 m-0 align-items-center pt-4">
+
+              <div class="col-md-10 ml-0">
+                <div class="row p-2 m-2 bg-grey" *ngFor="let asset of product.assests">
+                  <div class="col-md-3 ml-0">
+                    <button class="btn btn-default rounded-0 text-white font-weight-bold file-buttonbg" (click)="file.click()">Choose
+                      File </button>
+                    <input hidden type="file" #file (change)="getfilename($event, asset)" />
+                  </div>
+
+                  <div class="col-md-7 pt-2 ">
+                    {{asset.assestName}}
+                  </div>
+
+                  <div class="col-md-2 mr-auto">
+                    <i class="material-icons pt-2 common-color" (click)="deleteAsset(asset)">close</i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 pt-2">
+                <i class="material-icons font-36 common-color" (click)="addAsset()">add_circle</i>
+              </div>
+            </div>
+          </div>
+          {{product|json}}
+        </wizard-step>
+
+
+
+        <wizard-step [title]="'3.Signal'" (onNext)="onStep3Next($event)">
+          <div class="card p-4 m-4 border-0 wizard-size">
+            <div class="row">
+
+              <div class="col-md-10" *ngFor="let signal of product.signals">
+                <div class="d-flex">
+                  <div class="col-md-6">
+                    <div class="d-flex">
+                      <label class="p-1" for="selectsignal"> Signal </label>
+                      <select class="form-control select-width p-1 minwidth" id="selectsignal" [(ngModel)]="signal.signal">
+                        <option value="">Select Signal Type</option>
+                        <option value="Lead Validation">Lead Validation</option>
+                        <option value="Competitor">Competitor</option>
+                        <option value="Appointment">Appointment</option>
+                        <option value="Politeness">Politeness</option>
+                        <option value="Appointment Request Signal">Appointment Request Signal</option>
+                        <option value="Primary Interest Signal">Primary Interest Signal</option>
+                        <option value="Choice Signal">Choice Signal</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" [(ngModel)]="signal.script">
+                  </div>
+                  <div class="col-md-1">
+                    <input class="colorPickerSize" [(colorPicker)]="signal.color" [style.background]="signal.color" (colorPickerChange)="setSignalColor(signal, signal.color)"
+                      [cpOutputFormat]="'hex'" />
+                  </div>
+                  <div class="col-md-1">
+                    <i class="material-icons common-color" (click)="deleteSignal(signal)">close</i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <i class="material-icons font-36 common-color" (click)="addSignal()">add_circle</i>
+              </div>
+            </div>
+          </div>
+          {{product|json}}
+        </wizard-step>
+
+      </form-wizard>
+    </div>
+
+  </section>
+</div>

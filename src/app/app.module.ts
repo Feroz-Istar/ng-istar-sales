@@ -7,32 +7,37 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { LoginComponent } from './login/login.component';
-import { LoginService } from './login/service/login.service';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardCardComponent } from './dashboard/dashboard-card/dashboard-card.component';
 import { ComplexService } from './complex/complex.service';
 import { DashboardCardContentComponent } from './dashboard/dashboard-card-content/dashboard-card-content.component';
 import { LeadsComponent } from './leads/leads/leads.component';
-import { PipelineComponent } from './pipeline/pipeline/pipeline.component';
-import { ProductsComponent } from './products/products/products.component';
+import { PipelineComponent } from './pipeline/pipeline/pipeline.component';;
 import { TeamsComponent } from './teams/teams/teams.component';
+import { ProductsComponent } from './products/products/products.component';
+import { ProductCardComponent } from './products/product-card/product-card.component';
+import { LoginComponent } from './login/login/login.component';
+import { ProductCardExpandedComponent } from './products/product-card-expanded/product-card-expanded.component';
+import { ProductServiceService } from './products/service/product-service.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     DashboardComponent,
     NavbarComponent,
     DashboardCardComponent,
     DashboardCardContentComponent,
     LeadsComponent,
     PipelineComponent,
-    ProductsComponent,
     TeamsComponent,
-
+    ProductsComponent,
+    ProductCardComponent,
+    LoginComponent,
+    ProductCardExpandedComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -42,7 +47,7 @@ import { TeamsComponent } from './teams/teams/teams.component';
     SlickModule.forRoot(),
     NgbModule
   ],
-  providers: [LoginService, ComplexService],
+  providers: [ComplexService, ProductServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

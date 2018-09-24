@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../login/service/login.service';
+import { LoginServiceService } from '../../login/service/login-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,19 +8,19 @@ import { LoginService } from '../../login/service/login.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private loginservice: LoginService) { }
+  constructor(private loginservice: LoginServiceService) { }
 
   ngOnInit() {
     let complexobject = JSON.parse(localStorage.getItem("complexobject"))
     console.log(complexobject.tasks);
 
 
-    this.loginservice.dummy().subscribe(
-      data => {
-        console.log('this is data')
-        console.log(data)
-      }
-    )
+    // this.loginservice.dummy().subscribe(
+    //   data => {
+    //     console.log('this is data')
+    //     console.log(data)
+    //   }
+    // )
   }
 
 }

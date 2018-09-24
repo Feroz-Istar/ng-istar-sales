@@ -1,3 +1,36 @@
 <app-navbar></app-navbar>
-<p> products works!
-</p>
+
+<main role="main pt-11">
+  <div class="jumbotron">
+    <div class="container-fluid ml-2 mr-2">
+
+      <div class="row  mt-3">
+        <div class="d-flex bd-highlight mb-3 w-100">
+          <div class="mr-auto p-0 bd-highlight font-28 text-muted">Products</div>
+          <div class="p-0 mr-3 bd-highlight">
+            <select class="form-control min-wid" id="exampleFormControlSelect1">
+              <option> All </option>
+              <option> </option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-danger pt-0 pb-0 font-15 ">All Products</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body p-4">
+          <div class="d-flex flex-row">
+            <div class="col-md-3 font-16 font-weightbold"> PRODUCT NAME </div>
+            <div class="col-md-6 font-16 font-weightbold"> DOCUMENTS </div>
+            <div class="col-md-3 font-16 font-weightbold"> SIGNALS </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngFor="let item of products">
+        <app-product-card [products]=item></app-product-card>
+      </div>
+
+    </div>
+  </div>
+</main>
